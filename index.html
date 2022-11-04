@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position sticky</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        a{
+            text-decoration: none;            
+            transition: .5s;
+            color: #333;
+        }
+        nav{   
+            height: 8vh;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;   
+            border-top: 1px #eee solid;
+            border-bottom: 1px #eee solid;
+            background: rgba(255, 255, 255, 0.932);                                            
+        }
+        section{
+            height: 100vh;
+            /* background: #eee; */
+            background: url('https://seoyoosuk.com/images/home5.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            position: relative;
+        }    
+        section:nth-child(odd){
+            filter:grayscale(.5);
+        } 
+        .intro{
+            height: 92vh;
+            background: url('https://seoyoosuk.com/images/home5.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;            
+        }  
+        .logo{
+            width: 25%;
+            padding: 13.76px 24.875px;
+        }      
+        /* .logo img{width: 70%;} */
+        .gnb a{
+            line-height: 8vh;
+            font-size: 16px;                               
+        }
+        .gnb li{width: 25%;
+            text-align: center; 
+        }        
+        .gnb{
+            width: 75%;
+            display: flex;            
+        }    
+        .gnb li:hover>a{
+            font-weight: bolder;
+            /* border-bottom: #333 2px solid; */
+        }   
+        .title{
+            height: 30vh;   
+            width: 100%;
+            position: absolute;
+            top: 0;
+           /*  background: #fff; */
+        }
+        .text{
+            height: 30vh;
+            width: 100%;
+            position:absolute;
+            bottom: 0;
+            /* background: #fff; */
+        }
+    </style>
+</head>
+<body>
+    <div class="intro">    
+    </div>
+    <nav>
+        <div class="logo">
+            <a href="#none"><img src="img/friend's-house-logo.png" alt="로고"></a>
+        </div>
+        <ul class="gnb">           
+            <li><a href="#none" data="first">PROLOGUE</a></li>
+            <li><a href="#none" data="second">ROOMS</a></li>
+            <li><a href="#none" data="third">RESERVATION</a></li>
+            <li><a href="#none" data="fourth">TRAVAL</a></li>
+        </ul>
+    </nav>     
+    <section id="first"></section>
+    <section id="second">
+        <div class="title">?</div>
+        <div class="text">??</div>
+    </section>
+    <section id="third"></section>
+    <section id="fourth"></section>
+
+
+    <script>
+        $(".gnb a").click(go);
+
+        function go(){
+            var data = $(this).attr("data");
+            
+            var element = document.querySelector("#"+data);
+            var offset = window.pageYOffset + element.getBoundingClientRect().top;
+            console.log(offset);
+            $("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
+        }
+        //window.pageYOffset + element.getBoundingClientRect().top;
+        
+        //$("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
+
+    </script>
+</body>
+</html>
