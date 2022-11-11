@@ -106,42 +106,59 @@
         #second{
             width: 100%;
             height: 100vh;
-            position: relative;
+            position: relative;         
         }             
         .rp{    
-            width: 60%;     
+            width: 84%;     
             display: flex;
             justify-content: space-around; 
-            padding-top: 20px;                   
-            background: rgba(255, 255, 255, 0.932);
-            margin-left: 20%;   
+            /* padding-top: 20px;  */                  
+            padding: 0 8%;
+          /*   margin-left: 20%;  */  
             position: absolute;
-            top: 26vh;
+            top: 31%;
         }
         .rp a{           
             text-align: center;
             font-size: .8rem;
+            line-height: 40px;
         }
-        .rp li{width: 40%;}        
+        .rp li{
+            width: 30%; 
+            padding: 1%;
+            border: 1px #777 solid;  
+            background: rgba(255, 255, 255, 0.932);         
+        }        
         .rp img{width: 100%;}
         .rp_text{
-            width: 20%;
-            height: 10vh;         
-            text-align: center;   
-            padding: 20px 0;                          
-            background: rgba(255, 255, 255, 0.932); 
-            margin-left: 40%;   
-            line-height: 20px;
+            width: 30%;                
+            text-align: center;  
+            background: rgba(255, 255, 255, 0.932);                     
             font-size: .8rem;
             position: absolute;
-            top: 10vh;
+            top: 12%; left: 35%;            
             border-radius: 15px;
-            border: 1px #eee solid;
+            border: 1px #eee solid;    
+            line-height: 32px;                 
         }
         .rp_text h3{
             font-size: 1rem;
+            line-height: 40px;           
         }
-
+        footer{
+            height: 8vh;
+            display: flex;            
+        }
+        .f_logo{            
+            width: 25%;
+            padding: 13.76px 24.875px;
+        }
+        .copyright{
+            font-size: .8rem;
+            line-height: 1.2rem;
+            width: 65%;
+            text-align: center;
+        }
 
         
     </style>
@@ -171,7 +188,7 @@
         </div>     
     </section>
     <section id="second">
-        <div class="rp_text"><h3>ROOM PREVIEW </h3><br>오롯이 나에게 집중하며 자연이 주는<br>평온함을 느끼며 창밖으로 보이는 자연과 함께<br>머무르는 쉼의 하루를 보내보세요.</div>
+        <div class="rp_text"><h3>ROOM PREVIEW </h3>오롯이 나에게 집중하며 자연이 주는<br>평온함을 느끼며 창밖으로 보이는 자연과 함께<br>머무르는 쉼의 하루를 보내보세요.</div>
         <div class="rp">            
             <li><a href="#none"><img src="img/haeinsuk.jpg" alt="방이미지">해인숙</a></li>
             <li><a href="#none"><img src="img/gaoncha.jpg" alt="방이미지">가온채</a></li>
@@ -180,7 +197,16 @@
     </section>
     <section id="third"></section>
     <section id="fourth"></section>
-
+    <footer>
+        <div class="f_logo">
+            <a href="#none"><img src="img/friend's-house-logo.png" alt="로고"></a>
+        </div>
+        <div class="copyright">
+            이용약관 | 개인정보처리방침 |이메일수집거부<br>
+            충북 충주시 덕은로 596 | 사업자등록번호 000-00-0000<br>
+            Copyright ⓒ 게스트하우스 친구집. All rights reserved.
+        </div>
+    </footer>
 
     <script>
         $(".gnb a").click(go);
