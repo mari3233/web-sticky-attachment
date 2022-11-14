@@ -30,12 +30,16 @@
         section{
             height: 100vh;
             /* background: #eee; */
-            background: url('https://seoyoosuk.com/images/home5.jpg');
+            background: url(' https://seoyoosuk.com/images/home6.jpg');
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
             position: relative;
         }    
+        /*  
+        https://seoyoosuk.com/images/home6.jpg
+        https://seoyoosuk.com/images/home1.jpg
+        https://seoyoosuk.com/images/home2-1.jpg*/
         section:nth-child(odd){
             filter:grayscale(.5);
         } 
@@ -111,40 +115,68 @@
         .rp{    
             width: 84%;     
             display: flex;
-            justify-content: space-around; 
+            justify-content: space-evenly; 
             /* padding-top: 20px;  */                  
             padding: 0 8%;
           /*   margin-left: 20%;  */  
             position: absolute;
-            top: 31%;
-        }
-        .rp a{           
-            text-align: center;
-            font-size: .8rem;
-            line-height: 40px;
-        }
+            top: 37%;
+        }       
         .rp li{
-            width: 30%; 
-            padding: 1%;
+            width: 23%; 
+            padding: .5%;
+            box-sizing: border-box;
             border: 1px #777 solid;  
             background: rgba(255, 255, 255, 0.932);         
         }        
         .rp img{width: 100%;}
         .rp_text{
-            width: 30%;                
+            width: 17%;                
             text-align: center;  
             background: rgba(255, 255, 255, 0.932);                     
             font-size: .8rem;
             position: absolute;
-            top: 12%; left: 35%;            
+            top: 16%; left: 41.5%;            
             border-radius: 15px;
-            border: 1px #eee solid;    
+            border: 1px #777 solid;    
             line-height: 32px;                 
-        }
+        }        
         .rp_text h3{
             font-size: 1rem;
             line-height: 40px;           
         }
+
+
+        /* 방 이미지에 hover했을때 방 이름 짜잔 */
+        .rp li a{position: relative;}
+        .roomname{
+            width: 100%;
+            height: 100%;      
+            position: absolute;
+            background: rgba(52, 51, 73, 0.521);
+            top: 0; left: 0;
+            opacity: 0;
+        }
+        .roomname p{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            position: absolute;
+            top: 0; 
+            transform: translateY(50%);            
+            color: #fff;
+            font-weight: bold;          
+        }
+        .rp li:hover .roomname{
+            top: 0;
+            opacity: 1;
+            transition: .3s;
+        }
+
+
+
+
+
         footer{
             height: 8vh;
             display: flex;            
@@ -190,9 +222,24 @@
     <section id="second">
         <div class="rp_text"><h3>ROOM PREVIEW </h3>오롯이 나에게 집중하며 자연이 주는<br>평온함을 느끼며 창밖으로 보이는 자연과 함께<br>머무르는 쉼의 하루를 보내보세요.</div>
         <div class="rp">            
-            <li><a href="#none"><img src="img/haeinsuk.jpg" alt="방이미지">해인숙</a></li>
-            <li><a href="#none"><img src="img/gaoncha.jpg" alt="방이미지">가온채</a></li>
-            <li><a href="#none"><img src="img/chungyoun.jpg" alt="방이미지">청연</a></li>
+            <li>
+                <a href="#none"><img src="img/haeinsuk.jpg" alt="방이미지">
+                <div class="roomname">
+                    <p>해인숙</p>
+                </div>
+            </a></li>
+            <li>
+                <a href="#none"><img src="img/gaoncha.jpg" alt="방이미지">
+                <div class="roomname">
+                    <p>가온채</p>
+                </div>
+            </a></li>
+            <li>
+                <a href="#none"><img src="img/chungyoun.jpg" alt="방이미지">
+                <div class="roomname">
+                    <p>청연</p>
+                </div>
+            </a></li>
         </div>
     </section>
     <section id="third"></section>
